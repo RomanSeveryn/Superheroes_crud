@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "super_heroes",
+      "database": "db_superheroes",
+      "username": "postgres",
+      "password": "postgres"
+    }
+  ]
+}
