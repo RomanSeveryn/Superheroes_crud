@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/ HTTP/1.1
+Content-Type: application/json
+
+{
+"nickname": "3",
+"realName": "2",
+"originDescription": "3",
+"catchPhrase": "4"
+}
