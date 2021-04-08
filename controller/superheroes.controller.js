@@ -31,7 +31,7 @@ module.exports.deleteSuperHeroes = async (req, res, next) => {
     const {
       params: { id },
     } = req;
-    const createdSuperHeroes = await Superheroes.destroy({ where: { id } });
+    await Superheroes.destroy({ where: { id } });
 
     res.status(201).send({});
   } catch (err) {
