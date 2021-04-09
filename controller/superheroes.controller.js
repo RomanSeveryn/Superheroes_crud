@@ -51,11 +51,14 @@ module.exports.addSuperpowertoSuperheroes = async (req, res, next) => {
 
     await superpowers.addSuperheroes(superheroes);
 
-    const superheroesWithSuperpower = await Group.findAll({
+    const superheroesWithSuperpower = await Superpowers.findAll({
       where: { id: superpowerId },
       include: [
         {
           model: Superheroes,
+          attributes: {
+            exclude: ['createdAt','updatedAt'],
+          },
           through: {
             attributes: [],
           },

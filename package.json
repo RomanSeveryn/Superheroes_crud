@@ -1,8 +1,7 @@
 {
-  "name": "Superheroes-CRUD",
+  "name": "superheroes-crud",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "private": true,
   "scripts": {
     "start": "nodemon ./server.js"

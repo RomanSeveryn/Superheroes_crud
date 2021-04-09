@@ -2,5 +2,5 @@ PUT http://localhost:3000/api/addSuperpowers/1 HTTP/1.1
 Content-Type: application/json
 
 {
-  "superheroesId": 2
+  "superheroesId": 1
 }
