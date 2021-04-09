@@ -8,6 +8,7 @@ const router = Router();
 router.post('/', SuperHeroesController.createSuperHeroes);
 router.get('/', paginate, SuperHeroesController.getAllSuperHeroes);
 router.delete('/:id', SuperHeroesController.deleteSuperHeroes);
+router.put('/addSuperpowers/:superpowerId', SuperHeroesController.addSuperpowertoSuperheroes);
 
 router.post('/superpowers', SuperpowersController.createSuperpowers);
 
