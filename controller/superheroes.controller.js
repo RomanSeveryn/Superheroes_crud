@@ -68,3 +68,25 @@ module.exports.addSuperpowertoSuperheroes = async (req, res, next) => {
     next(err);
   }
 };
+
+
+module.exports.createImage = async (req, res, next) => {
+  try {
+    const {
+      file: { filename },
+      params: { superheroesId },
+    } = req;
+
+    const [count, [updatedHero]] = await Superheroes.update(
+      { images: filename },
+      {
+        where: { id: superheroesId },
+        returning: true,
+      }
+    );
+
+    res.send(updatedHero);
+  } catch (err) {
+    next(err);
+  }
+};
