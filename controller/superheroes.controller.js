@@ -1,3 +1,4 @@
+const createError = require('http-errors');
 const { Superheroes, Superpowers } = require('../models');
 
 module.exports.createSuperHeroes = async (req, res, next) => {
@@ -26,14 +27,19 @@ module.exports.getAllSuperHeroes = async (req, res, next) => {
   }
 };
 
-module.exports.deleteSuperHeroes = async (req, res, next) => {
+module.exports.deleteSuperHero = async (req, res, next) => {
   try {
     const {
       params: { id },
     } = req;
-    await Superheroes.destroy({ where: { id } });
 
-    res.status(201).send({});
+    const rowsCount = await Superheroes.destroy({ where: { id } });
+
+    if (rowsCount !== 1) {
+      return next(createError(404, 'Hero not found'));
+    }
+
+    res.send({data: result});
   } catch (err) {
     next(err);
   }

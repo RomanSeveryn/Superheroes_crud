@@ -2,5 +2,5 @@ POST http://localhost:3000/api/superpowers
 Content-Type: application/json
 
 {
-  "superpower": "Fly"
+  "superpower": "1"
 }
